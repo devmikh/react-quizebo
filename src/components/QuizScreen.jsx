@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { nanoid } from 'nanoid';
 import QuizQuestion from "./QuizQuestion";
 
 export default function QuizScreen() {
@@ -23,6 +24,7 @@ export default function QuizScreen() {
 
   const quizQuestionElements = quizQuestions.map(quizQuestion => 
     (<QuizQuestion 
+        key={nanoid()}
         question={quizQuestion.question} 
         correctAnswer={quizQuestion.correctAnswer}
         incorrectAnswers={quizQuestion.incorrectAnswers}/>));
