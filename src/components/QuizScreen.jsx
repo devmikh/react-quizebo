@@ -1,18 +1,36 @@
 import React from 'react';
-import Question from "./Question";
+import axios from 'axios';
+import QuizQuestion from "./QuizQuestion";
 
 export default function QuizScreen() {
 
-  const [checkAnswers, setCheckAnswers] = React.useState(true);
+  const [checkAnswers] = React.useState(true);
+  const [quizQuestions, setQuizQuestions] = React.useState([]);
+
+  // Make a GET request to the API. Populate the state with the results
+  React.useEffect(() => {
+    axios.get("https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple")
+      .then(response => {
+        setQuizQuestions(response.data.results.map(entry => {
+          return ({
+            question: entry.question,
+            correctAnswer: entry.correct_answer,
+            incorrectAnswers: entry.incorrect_answers
+          })
+        }))
+      });
+  }, [])
+
+  const quizQuestionElements = quizQuestions.map(quizQuestion => 
+    (<QuizQuestion 
+        question={quizQuestion.question} 
+        correctAnswer={quizQuestion.correctAnswer}
+        incorrectAnswers={quizQuestion.incorrectAnswers}/>));
 
   return (
     <div className="quiz-screen-container">
       <div className="questions-container">
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
+        {quizQuestionElements}
       </div>
       <div className="results">
         {checkAnswers && <p className="results--score">You scored 3/5 correct answers</p>}
