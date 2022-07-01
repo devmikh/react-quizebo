@@ -33,7 +33,7 @@ export default function QuizScreen() {
           // Add correct answer to answers array
           answersArray.push({
             id: nanoid(),
-            answerText: he.decode(result.correct_answer) + " +",
+            answerText: he.decode(result.correct_answer),
             isCorrect: true,
             isSelected: false
           });

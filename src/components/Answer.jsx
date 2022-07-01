@@ -6,17 +6,17 @@ export default function Answer(props) {
     let color;
     if (props.checkAnswers) {
       if (props.isCorrect) {
-        color = 'green';
+        color = '#94D7A2';
       } else {
         if (props.isSelected) {
-          color = 'red';
+          color = '#F8BCBC';
         } else {
           color = 'white';
         }
       }
     } else {
       if (props.isSelected) {
-        color = 'blue';
+        color = '#D6DBF5';
       } else {
         color = 'white';
       }

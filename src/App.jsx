@@ -5,7 +5,7 @@ import QuizScreen from './components/QuizScreen';
 
 function App() {
 
-  const [startQuiz, setStartQuiz] = React.useState(true);
+  const [startQuiz, setStartQuiz] = React.useState(false);
 
   function changeScreen() {
     setStartQuiz(true);
