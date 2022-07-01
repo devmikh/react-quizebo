@@ -1,14 +1,14 @@
-import { nanoid } from 'nanoid';
 import Answer from "./Answer"
 
 export default function QuizQuestion(props) {
 
   const answerElements = props.answers.map(answer => {
     return <Answer
-            key={nanoid()}
+            key={answer.id}
             text={answer.answerText}
             isCorrect={answer.isCorrect}
-            isSelected={answer.isSelected} />
+            isSelected={answer.isSelected}
+            switchIsSelected={() => props.switchIsSelected(props.id, answer.id)}/>
   })
 
   return (

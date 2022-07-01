@@ -17,12 +17,14 @@ export default function QuizScreen() {
         const quizQuestions = response.data.results.map(result => {
           // create question object with properties questionText as string and answers as array of objects
           const questionObject = {
+            id: nanoid(),
             questionText: he.decode(result.question),
             answers: []
           }
           // create answers array. Map through result's incorrect answers and create an answer object for each of them
           const answersArray = result.incorrect_answers.map(incorrectAnswer => {
             return {
+              id: nanoid(),
               answerText: he.decode(incorrectAnswer),
               isCorrect: false,
               isSelected: false
@@ -31,6 +33,7 @@ export default function QuizScreen() {
 
           // Add correct answer to answers array
           answersArray.push({
+            id: nanoid(),
             answerText: he.decode(result.correct_answer) + " +",
             isCorrect: true,
             isSelected: false
@@ -60,12 +63,34 @@ export default function QuizScreen() {
     return array;
   }
 
+  // Function to switch isSelected property of an answer
+  function switchIsSelected(questionId, answerId) {
+    setQuizState(prevQuizState => {
+      return prevQuizState.map(quizQuestion => {
+        if (quizQuestion.id === questionId) {
+          const answers = quizQuestion.answers.map(answer => {
+            if (answer.id === answerId) {
+              return {...answer, isSelected: !answer.isSelected}
+            } else {
+              return {...answer, isSelected: false};
+            }
+          })
+          return {...quizQuestion, answers: answers};
+        } else {
+          return quizQuestion;
+        }
+      })
+    })
+  }
+
   // Create question elements 
   const quizQuestionElements = quizState.map(quizQuestion => 
     (<QuizQuestion 
-        key={nanoid()}
+        key={quizQuestion.id}
+        id={quizQuestion.id}
         questionText={quizQuestion.questionText} 
-        answers={quizQuestion.answers} />));
+        answers={quizQuestion.answers}
+        switchIsSelected={switchIsSelected} />));
 
   return (
     <div className="quiz-screen-container">
