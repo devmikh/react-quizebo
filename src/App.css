@@ -68,6 +68,10 @@ button {
   padding: 4px 10px;
 }
 
+.question--answer:hover {
+  cursor: pointer;
+}
+
 .results {
   display: flex;
   align-items: center;
