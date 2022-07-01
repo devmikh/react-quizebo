@@ -6,7 +6,7 @@ import QuizQuestion from "./QuizQuestion";
 
 export default function QuizScreen() {
 
-  const [checkAnswers] = React.useState(true);
+  const [checkAnswers] = React.useState(false);
   const [quizState, setQuizState] = React.useState([]);
 
   // Make a GET request to the API. Populate the state with quiz questions and answers

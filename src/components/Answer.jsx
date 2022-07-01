@@ -3,7 +3,7 @@ import React from "react";
 export default function Answer(props) {
 
   const styles = {
-    backgroundColor: props.isSelected ? 'lightblue' : 'white'
+    backgroundColor: props.isSelected ? '#D6DBF5' : 'white'
   };
 
   return (
