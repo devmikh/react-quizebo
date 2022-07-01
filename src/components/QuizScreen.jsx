@@ -6,11 +6,10 @@ import QuizQuestion from "./QuizQuestion";
 
 export default function QuizScreen() {
 
-  const [checkAnswers] = React.useState(false);
+  const [checkAnswers, setCheckAnswers] = React.useState(false);
   const [quizState, setQuizState] = React.useState([]);
 
-  // Make a GET request to the API. Populate the state with quiz questions and answers
-  React.useEffect(() => {
+  function getQuizQuestionsFromApi() {
     axios.get("https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple")
       .then(response => {
         // Map through each element in results array to create our state
@@ -50,7 +49,11 @@ export default function QuizScreen() {
         // Set our state to newly created array of question objects
         setQuizState(quizQuestions);
       })
-  }, []);
+    }
+
+  React.useEffect(() => {
+    getQuizQuestionsFromApi();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
    // Helper function to shuffle the answers array
    function shuffleArray(array) {
@@ -61,6 +64,27 @@ export default function QuizScreen() {
       array[j] = temp;
     }
     return array;
+  }
+
+  function countCorrectAnswers(questionsArray) {
+    let count = 0;
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j < 4; j++) {
+        if (questionsArray[i].answers[j].isCorrect && questionsArray[i].answers[j].isSelected) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  function handleCheckAnswersButton() {
+    if (!checkAnswers) {
+      setCheckAnswers(true);
+    } else {
+      getQuizQuestionsFromApi();
+      setCheckAnswers(false);
+    }
   }
 
   // Function to switch isSelected property of an answer
@@ -90,7 +114,8 @@ export default function QuizScreen() {
         id={quizQuestion.id}
         questionText={quizQuestion.questionText} 
         answers={quizQuestion.answers}
-        switchIsSelected={switchIsSelected} />));
+        switchIsSelected={switchIsSelected}
+        checkAnswers={checkAnswers} />));
 
   return (
     <div className="quiz-screen-container">
@@ -98,8 +123,8 @@ export default function QuizScreen() {
         {quizQuestionElements}
       </div>
       <div className="results">
-        {checkAnswers && <p className="results--score">You scored 3/5 correct answers</p>}
-        <button className="results--button">Check Answers</button>
+        {checkAnswers && <p className="results--score">You scored {countCorrectAnswers(quizState)}/5 correct answers</p>}
+        <button className="results--button" onClick={handleCheckAnswersButton}>{checkAnswers ? "New Game" : "Check Answers"}</button>
       </div>
     </div>
   )

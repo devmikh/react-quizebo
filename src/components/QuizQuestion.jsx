@@ -8,7 +8,8 @@ export default function QuizQuestion(props) {
             text={answer.answerText}
             isCorrect={answer.isCorrect}
             isSelected={answer.isSelected}
-            switchIsSelected={() => props.switchIsSelected(props.id, answer.id)}/>
+            switchIsSelected={() => props.switchIsSelected(props.id, answer.id)}
+            checkAnswers={props.checkAnswers}/>
   })
 
   return (
