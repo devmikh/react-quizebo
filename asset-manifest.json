@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/react-quizebo/static/css/main.665cde4b.css",
+    "main.js": "/react-quizebo/static/js/main.c638aa7f.js",
+    "static/media/31.jpg": "/react-quizebo/static/media/31.a906e59f29afd8556270.jpg",
+    "static/media/29.jpg": "/react-quizebo/static/media/29.951084c0ea406ac3016c.jpg",
+    "static/media/25.jpg": "/react-quizebo/static/media/25.a2f4722f3a638574ff54.jpg",
+    "static/media/13.jpg": "/react-quizebo/static/media/13.41cf1d9aa5ed0cbf15d5.jpg",
+    "static/media/9.jpg": "/react-quizebo/static/media/9.81326d842a3f24b7675d.jpg",
+    "static/media/26.jpg": "/react-quizebo/static/media/26.ec7eb21156706970efac.jpg",
+    "static/media/18.jpg": "/react-quizebo/static/media/18.3641547cf01310d461d3.jpg",
+    "static/media/16.jpg": "/react-quizebo/static/media/16.1064afb9ab51ec2ecb34.jpg",
+    "static/media/27.jpg": "/react-quizebo/static/media/27.80939667697c9a0cda27.jpg",
+    "static/media/23.jpg": "/react-quizebo/static/media/23.8f8e3f9b43cf204ceb14.jpg",
+    "static/media/30.jpg": "/react-quizebo/static/media/30.656d34d3f34fcc4da125.jpg",
+    "static/media/19.jpg": "/react-quizebo/static/media/19.b156931951efd479ba08.jpg",
+    "static/media/10.jpg": "/react-quizebo/static/media/10.7d87243254bc68e8011e.jpg",
+    "static/media/14.jpg": "/react-quizebo/static/media/14.46f7f6217a0906ecdbbe.jpg",
+    "static/media/28.jpg": "/react-quizebo/static/media/28.29f295f0a9e0bd77cb5f.jpg",
+    "static/media/12.jpg": "/react-quizebo/static/media/12.da77bf9fa26765f5ebcc.jpg",
+    "static/media/21.jpg": "/react-quizebo/static/media/21.e1b39d56044dc8f9b3df.jpg",
+    "static/media/22.jpg": "/react-quizebo/static/media/22.9cee620d9f5898b4f4e1.jpg",
+    "static/media/17.jpg": "/react-quizebo/static/media/17.b86bfafe982fa140ebf3.jpg",
+    "static/media/24.jpg": "/react-quizebo/static/media/24.b071212468f8bea3464f.jpg",
+    "static/media/15.jpg": "/react-quizebo/static/media/15.ef9db29557f09e83ffb4.jpg",
+    "static/media/20.jpg": "/react-quizebo/static/media/20.d0b1286d7236058d26c5.jpg",
+    "static/media/11.jpg": "/react-quizebo/static/media/11.acd2bc05164ecc7fd624.jpg",
+    "static/media/32.jpg": "/react-quizebo/static/media/32.d47df4fe0e2207a73d93.jpg",
+    "index.html": "/react-quizebo/index.html",
+    "main.665cde4b.css.map": "/react-quizebo/static/css/main.665cde4b.css.map",
+    "main.c638aa7f.js.map": "/react-quizebo/static/js/main.c638aa7f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.665cde4b.css",
+    "static/js/main.c638aa7f.js"
+  ]
+}
