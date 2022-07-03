@@ -1,5 +1,7 @@
 # Quizebo
 
+[Try it out here](https://devmikh.github.io/react-quizebo/)
+
 ## Description
 
 Quizebo is an online quiz application. Choose category of your liking and test your knowledge in it!
