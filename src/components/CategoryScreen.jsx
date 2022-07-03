@@ -5,7 +5,12 @@ import { nanoid } from 'nanoid';
 export default function CategoryScreen(props) {
 
   const categoryElements = categoriesData.map(category => {
-    return <Category key={nanoid()} name={category.name} subcategories={category.subcategories} handleClick={props.handleClick} />
+    return <Category
+            key={nanoid()}
+            name={category.name}
+            subcategories={category.subcategories}
+            image={category.image}
+            handleClick={props.handleClick} />
   })
 
   return (

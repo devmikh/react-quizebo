@@ -2,6 +2,7 @@
 const categoriesData = [
   {
     name: "Entertainment",
+    image: "entertainment.png",
     subcategories: [
       {
         name: "Books",
@@ -47,6 +48,7 @@ const categoriesData = [
   },
   {
     name: "Science",
+    image: "science.png",
     subcategories: [
       {
         name: "Nature",
@@ -76,6 +78,7 @@ const categoriesData = [
   },
   {
     name: "Other",
+    image: "other.png",
     subcategories: [
       {
         name: "General",
