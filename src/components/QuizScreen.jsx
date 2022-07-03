@@ -119,7 +119,7 @@ export default function QuizScreen(props) {
 
   return (
     <div className="quiz-screen-container">
-      <h2>{props.category.name} Quiz</h2>
+      <h1>{props.category.name} Quiz</h1>
       <div className="questions-container">
         {quizQuestionElements}
       </div>
