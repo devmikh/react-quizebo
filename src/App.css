@@ -14,7 +14,7 @@ button {
   font-weight: 700;
 }
 
-/* Start Screen */
+/* Start screen */
 .start-screen-container {
   height: 100vh;
   display: flex;
@@ -35,6 +35,38 @@ button {
 
 .start-screen--button {
   margin-top: 20px;
+}
+
+/* Category screen */
+
+.categories-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.subcategory-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid lightgrey;
+  width: 250px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.subcategory-image {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* Quiz screen */

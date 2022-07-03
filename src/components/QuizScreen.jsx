@@ -4,13 +4,13 @@ import he from 'he';
 import { nanoid } from 'nanoid';
 import QuizQuestion from "./QuizQuestion";
 
-export default function QuizScreen() {
+export default function QuizScreen(props) {
 
   const [checkAnswers, setCheckAnswers] = React.useState(false);
   const [quizState, setQuizState] = React.useState([]);
 
   function getQuizQuestionsFromApi() {
-    axios.get("https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple")
+    axios.get(`https://opentdb.com/api.php?amount=5&category=${props.category.number}&difficulty=easy&type=multiple`)
       .then(response => {
         // Map through each element in results array to create our state
         const quizQuestions = response.data.results.map(result => {
@@ -119,12 +119,14 @@ export default function QuizScreen() {
 
   return (
     <div className="quiz-screen-container">
+      <h2>{props.category.name} Quiz</h2>
       <div className="questions-container">
         {quizQuestionElements}
       </div>
       <div className="results">
         {checkAnswers && <p className="results--score">You scored {countCorrectAnswers(quizState)}/5 correct answers</p>}
-        <button className="results--button" onClick={handleCheckAnswersButton}>{checkAnswers ? "New Game" : "Check Answers"}</button>
+        <button className="results--button" onClick={handleCheckAnswersButton}>{checkAnswers ? "New Quiz" : "Check Answers"}</button>
+        <button onClick={props.handleClick}>Another Category</button>
       </div>
     </div>
   )
