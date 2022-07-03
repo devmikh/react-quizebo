@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-quizebo/static/css/main.665cde4b.css",
-    "main.js": "/react-quizebo/static/js/main.c638aa7f.js",
+    "main.css": "/react-quizebo/static/css/main.682aea1a.css",
+    "main.js": "/react-quizebo/static/js/main.1ce5f832.js",
     "static/media/31.jpg": "/react-quizebo/static/media/31.a906e59f29afd8556270.jpg",
     "static/media/29.jpg": "/react-quizebo/static/media/29.951084c0ea406ac3016c.jpg",
     "static/media/25.jpg": "/react-quizebo/static/media/25.a2f4722f3a638574ff54.jpg",
@@ -27,11 +27,11 @@
     "static/media/11.jpg": "/react-quizebo/static/media/11.acd2bc05164ecc7fd624.jpg",
     "static/media/32.jpg": "/react-quizebo/static/media/32.d47df4fe0e2207a73d93.jpg",
     "index.html": "/react-quizebo/index.html",
-    "main.665cde4b.css.map": "/react-quizebo/static/css/main.665cde4b.css.map",
-    "main.c638aa7f.js.map": "/react-quizebo/static/js/main.c638aa7f.js.map"
+    "main.682aea1a.css.map": "/react-quizebo/static/css/main.682aea1a.css.map",
+    "main.1ce5f832.js.map": "/react-quizebo/static/js/main.1ce5f832.js.map"
   },
   "entrypoints": [
-    "static/css/main.665cde4b.css",
-    "static/js/main.c638aa7f.js"
+    "static/css/main.682aea1a.css",
+    "static/js/main.1ce5f832.js"
   ]
 }
